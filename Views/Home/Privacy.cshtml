@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<h4> @TempData["Name"]</h4>
+<h4> @TempData["Name"]</h4>
+<h4>@TempData["Age"]</h4>
+<h4>@TempData["Date_and_Time"]</h4>
+<h4>@TempData["Salary"]</h4>
+<ul>
+    @foreach (var item in (List<string>)TempData["group"])
+    {
+        <li>@item</li>
+    }
+</ul>

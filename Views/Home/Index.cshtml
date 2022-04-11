@@ -1,0 +1,48 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+<h4>====================================<SESSION>=======================================================</h4>
+
+<h1>@HttpContextAccessor.HttpContext.Session.GetString("Name")</h1>
+@*HttpContext.Session.GetString("Name");*@
+
+
+
+<h4>========================================<VIEWBAG>=========================================================</h4>
+<h4>@ViewBag.Name</h4>
+<h4>@ViewBag.Age</h4>
+<h4>@ViewBag.Date_and_Time</h4>
+<h4>@ViewBag.Salary</h4>
+<ul>
+    @foreach (var item in (List<string>)ViewBag.group)
+    {
+        <li>@item</li>
+    }
+</ul>
+
+<h4>========================================<VIEWDATA>=========================================================</h4>
+
+@*<h4>@ViewData["Name"]</h4>
+    <h4>@ViewData["Age"]</h4>
+    <h4>@ViewData["Date_and_Time"]</h4>
+    <h4>@ViewData["Salary"]</h4>
+    <ul>
+        @foreach (var item in (List<string>)ViewData["group"])
+        {
+            <li>@item</li>
+        }
+    </ul>*@
+
+<h4>========================================<TEMPDATA>=========================================================</h4>
+
+<h4> @TempData["Name"]</h4>
+<h4> @TempData["Name"]</h4>
+<h4>@TempData["Age"]</h4>
+<h4>@TempData["Date_and_Time"]</h4>
+<h4>@TempData["Salary"]</h4>
+<ul>
+    @foreach (var item in (List<string>)TempData["group"])
+    {
+        <li>@item</li>
+    }
+</ul>
